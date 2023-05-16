@@ -1,0 +1,240 @@
+@import 'base';
+
+.navbar {
+    background-color: #222831;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 20px;
+    
+    .navbar-links {
+        align-self: center;
+        display: flex;
+        gap: 30px;
+
+        .navbar__link {
+            display: block;
+            color: #EEEEEE;
+            font-family: $font-family;
+            font-size: 16px;
+            font-weight: 900;
+            text-decoration: none;
+        }
+
+        .navbar__link:hover {
+            color: #00ADB5;
+        }
+
+    }
+
+    .navbar-form {
+        &__input {
+            border: 1px solid #EEE;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            font-family: $font-family;
+            font-size: 16px;
+            padding: 9px;
+            width: 300px;
+        }
+
+        &__btn {
+            background-color: #00ADB5;
+            border: none;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            color: #EEEEEE;
+            font-family: $font-family;
+            font-size: 16px;
+            padding: 10px;
+            width: 100px;
+        }
+    }
+}
+
+.home-layout {
+    .home-layout-overlay-text {
+        padding: 50px;
+    }
+
+    &__text {
+        font-family: $font-family;
+        padding: 0 0 20px;
+    }
+
+    &__header {
+        font-family: $font-family;
+        padding: 20px 30px;
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none;
+        padding: 20px 30px;
+    }
+}
+
+.movie-card {
+    
+    &__img {
+        border: 1px solid none;
+        border-radius: 6px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        height: 150px;
+        width: 120px;
+    }
+
+    &__header {
+        font-family: $font-family;
+        text-align: center;
+        width: 120px;
+        padding: 0 0 5px;
+    }
+
+    &__text {
+        font-family: $font-family;
+        text-align: center;
+        width: 120px;
+    }
+}
+
+.list-block {
+    height: 100vh;
+}
+
+.movie-detail {
+    height: 100vh;
+
+    .movie-details-row {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+
+        &__img {
+            height: 250px;
+            width: 220px;
+        }
+    }
+    
+    .movie-details {
+        &__text {
+            font-family: $font-family;
+        }
+    }
+
+    .movie-detail {
+        &__h3 {
+            font-family: $font-family;
+
+            &--center {
+                text-align: center;
+            }
+
+            &--shift {
+                padding: 20px 30px;
+            }
+        }
+
+        &__text {
+            font-family: $font-family;
+            padding: 0 0 30px;
+            text-align: center;
+
+        }
+
+        &__link {
+            display: block;
+            font-family: $font-family;
+            padding: 20px 30px;
+            text-decoration: none;
+        }
+    }
+}
+
+.page-not-found {
+    align-items: center;
+    background-color: #044343;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+
+    &__text {
+        color: #EEEEEE;
+        font-family: $font-family;
+        padding: 20px;
+        text-align: center;
+
+        &--huge {
+            font-size: 200px;
+        }
+    }
+
+    &__link {
+        border: 1px solid #EEEEEE;
+        border-radius: 10px;
+        color: #EEEEEE;
+        display: block;
+        font-family: $font-family;
+        margin: 0 auto;
+        max-width: 100px;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+    }
+
+    &__link:hover {
+        background-color: #EEEEEE;
+        color: #044343;
+    }
+}
+
+.footer {
+    background-color: #393E46;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+
+    .footer-item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &__link {
+            color: #EEEEEE;
+            display: block;
+            font-family: $font-family;
+            font-weight: 900;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        &__link:hover {
+            color: #00ADB5;
+        }
+    }
+    
+    .footer-media {
+        width: 120px;
+
+        &__text {
+            color: #EEEEEE;
+            font-family: $font-family;
+            padding: 0 0 10px;
+        }
+
+        .footer-media-links {
+            display: flex;
+            justify-content: space-between;
+
+            &__icon {
+                color: #EEEEEE;
+                display: block;
+                height: 30px;
+                width: 30px;
+            }
+        }
+    }
+}

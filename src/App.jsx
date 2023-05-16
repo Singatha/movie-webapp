@@ -1,9 +1,20 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Layout from "./containers/Layout"
+import MovieDetail from "./containers/MovieDetail"
+import List from "./containers/List"
+import PageNotFound from "./containers/PageNotFound"
+
 function App() {
 
   return (
-    <div>
-      Hello There !
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route index path="/" element={<Layout />} />
+        <Route path="/movies/:name" element={<MovieDetail />} />
+        <Route path="/list" element={<List />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
