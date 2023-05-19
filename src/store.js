@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
+import movieReducer from './features/movie/movieSlice'
 import { movieApi } from './services/movie'
 
 export const store = configureStore({
   reducer: {
     // Add the generated reducer as a specific top-level slice
+    movie: movieReducer,
     [movieApi.reducerPath]: movieApi.reducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
