@@ -1,49 +1,51 @@
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
-import Series from "./Series"
-import Upcoming from "./Upcoming"
-import Popular from "./Popular"
+import Series from "./Tv/Series"
+import UpcomingMovies from "./Movies/UpcomingMovies"
+import PopularMovies from "./Movies/PopularMovies"
+import Loading from "../components/Loading"
+import Error from "../components/Error"
 import Carousel from 'react-bootstrap/Carousel'
-import { useGetTopRatedMoviesQuery } from "../services/movie"
+import { useGetTopRatedMoviesQuery } from "../services/media"
+import { formatGenresByID } from "../utils/utils"
 
 const Layout = () => {
     const { data, error, isLoading } = useGetTopRatedMoviesQuery()
 
     if (error){
-        return <>Oh no, there was an error</>
+        return <Error />
     } else if (isLoading){
-        return <>Loading...</>
+        return <Loading />
     } else {
         return (
             <div className="home-layout">
-                <Navbar />
+                <Navbar className="overlay" />
                 <Carousel>
                     {
                         data.results.map((movie) => {
                             return (
-                                <Carousel.Item key={movie.id}>
+                                <Carousel.Item className="home-layout__carousel-item" key={movie.id}>
                                     <img
                                         className="d-block w-100"
                                         src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
                                         alt="Movie Poster"
                                     />
+                                    <Carousel.Caption className="home-layout__carousel-caption">
+                                        <h1 className="home-layout__title">{movie.original_title}</h1>
+                                        <p className="home-layout__sub-title">{formatGenresByID(movie.genre_ids)}</p>
+                                        <h3 className="home-layout__text">{movie.overview}</h3>             
+                                    </Carousel.Caption>
                                 </Carousel.Item>
                             )
                         })
                     }
                 </Carousel>
-                <div className="home-layout-overlay-text">
-                    <h1 className="home-layout__text">Movie title</h1>
-                    <p className="home-layout__text home-layout__text--light">Movie category</p>
-                    <h3 className="home-layout__text">Description</h3>
-                    <p className="home-layout__text home-layout__text--light">Movie rating Movie duration</p>
-                </div>
 
                 <h3 className="home-layout__header">Upcoming</h3>
-                <Upcoming />
+                <UpcomingMovies />
 
                 <h3 className="home-layout__header">Popular</h3>
-                <Popular />
+                <PopularMovies />
 
                 <h3 className="home-layout__header">TV Series</h3>
                 <Series />

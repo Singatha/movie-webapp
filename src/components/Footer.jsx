@@ -1,24 +1,24 @@
 import { Link } from "react-router-dom"
-import { ReactComponent as FacebookIcon } from "../assets/images/facebook.svg"
-import { ReactComponent as TwitterIcon } from "../assets/images/twitter.svg"
-import { ReactComponent as InstagramIcon } from "../assets/images/instagram.svg"
+import { ReactComponent as FacebookIcon } from "../assets/images/icons/facebook.svg"
+import { ReactComponent as TwitterIcon } from "../assets/images/icons/twitter.svg"
+import { ReactComponent as InstagramIcon } from "../assets/images/icons/instagram.svg"
 
 const Footer = () => {
 
   return (
     <div className="footer">
-      <div className="footer-column">
-          <Link className="footer-item__link" to="/list/tv">TV Series</Link>
-          <Link className="footer-item__link" to="/list/movies">Movies</Link>
-          <Link className="footer-item__link" to="/list/favourite-movies">Favourite Movies</Link>
-          <Link className="footer-item__link" to="/list/favourite-tv-series">Favourite TV Series</Link>
+      <div className="footer__nav-links">
+          <Link className="footer__link footer__link--hovered" to="/list/tv">TV Series</Link>
+          <Link className="footer__link footer__link--hovered" to="/list/movies">Movies</Link>
+          <Link className="footer__link footer__link--hovered" to="/list/favourite-movies">Favourite Movies</Link>
+          <Link className="footer__link footer__link--hovered" to="/list/favourite-tv-series">Favourite TV Series</Link>
       </div>
-      <div className="footer-media">
-        <p className="footer-media__text">Follow us</p>
-        <div className="footer-media-links">
-          <FacebookIcon className="footer-media-links__icon"/>
-          <TwitterIcon className="footer-media-links__icon"/>
-          <InstagramIcon className="footer-media-links__icon"/>
+      <div className="footer__social-media-links">
+        <p className="footer__title">Follow us</p>
+        <div className="footer__social-media-wrapper">
+          <a className="footer__social-media-link footer__social-media-link--hovered" href="#"><FacebookIcon className="footer__icon"/></a>
+          <a className="footer__social-media-link footer__social-media-link--hovered" href="#"><TwitterIcon className="footer__icon"/></a>
+          <a className="footer__social-media-link footer__social-media-link--hovered" href="#"><InstagramIcon className="footer__icon"/></a>
         </div>
       </div>
     </div>

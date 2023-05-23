@@ -1,0 +1,19 @@
+.media-list {
+    height: 100vh;
+
+    &__content {
+        background-color: $color-bunting-default;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__slider {
+        margin: 0 40px;
+    }
+    
+    &__link {
+        display: block;
+        text-decoration: none;
+        padding: 20px 30px;
+    }
+}

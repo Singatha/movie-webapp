@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types'
-import TVList from './TVList'
-import MovieList from "./MovieList"
-import FavouriteMovieList from "./FavouriteMovieList"
-import FavouriteTVList from "./FavouriteTVList"
+import TVList from './Tv/TVList'
+import MovieList from "./Movies/MovieList"
+import FavouriteMovieList from "./Movies/FavouriteMovieList"
+import FavouriteTVList from "./Tv/FavouriteTVList"
+import { PARAM_NAMES } from '../utils/constants' 
 
 const ListSelector = ({ listName }) => {
     switch (listName){
-        case 'tv':
+        case PARAM_NAMES.TV:
             return <TVList />
-        case 'movies':
+        case PARAM_NAMES.MOVIES:
             return <MovieList />
-        case 'favourite-movies':
+        case PARAM_NAMES.FAVOURITE_MOVIES:
             return <FavouriteMovieList />
-        case 'favourite-tv-series':
+        case PARAM_NAMES.FAVOURITE_TV_SERIES:
             return <FavouriteTVList />
         default:
             return <p>no list</p>

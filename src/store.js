@@ -1,20 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
-import movieReducer from './features/movie/movieSlice'
-import { movieApi } from './services/movie'
+import mediaReducer from './features/media/mediaSlice'
+import { mediaApi } from './services/media'
 
 export const store = configureStore({
   reducer: {
-    // Add the generated reducer as a specific top-level slice
-    movie: movieReducer,
-    [movieApi.reducerPath]: movieApi.reducer,
+    media: mediaReducer,
+    [mediaApi.reducerPath]: mediaApi.reducer,
   },
-  // Adding the api middleware enables caching, invalidation, polling,
-  // and other useful features of `rtk-query`.
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(movieApi.middleware),
+    getDefaultMiddleware().concat(mediaApi.middleware),
 })
 
-// optional, but required for refetchOnFocus/refetchOnReconnect behaviors
-// see `setupListeners` docs - takes an optional callback as the 2nd arg for customization
 setupListeners(store.dispatch)
