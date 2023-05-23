@@ -1,10 +1,9 @@
-// Need to use the React-specific entry point to import createApi
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 const API_KEY = '49826d2b92b1877a7659eee47d7ca304';
-// Define a service using a base URL and expected endpoints
-export const movieApi = createApi({
-  reducerPath: 'movieApi',
+
+export const mediaApi = createApi({
+  reducerPath: 'mediaApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://api.themoviedb.org/3/' }),
   endpoints: (builder) => ({
     getMovie: builder.query({
@@ -37,14 +36,15 @@ export const movieApi = createApi({
     getSimilarMoviesByID: builder.query({
       query: (movieID) => `movie/${movieID}/similar?api_key=${API_KEY}`,
     }),
+    getSimilarTVByID: builder.query({
+      query: (tvID) => `tv/${tvID}/similar?api_key=${API_KEY}`,
+    }),
     getSearchMulti: builder.query({
       query: (keyword) => `search/multi?query=${keyword}&api_key=${API_KEY}`,
     }),
   }),
 })
 
-// Export hooks for usage in functional components, which are
-// auto-generated based on the defined endpoints
 export const { 
   useGetMovieQuery,
   useGetMovieByIDQuery,
@@ -55,5 +55,7 @@ export const {
   useGetPopularMoviesQuery, 
   useGetTopRatedMoviesQuery, 
   useGetUpcomingMoviesQuery,
-  useGetSimilarMoviesByIDQuery, 
-  useGetSearchMultiQuery } = movieApi
+  useGetSimilarMoviesByIDQuery,
+  useGetSimilarTVByIDQuery, 
+  useGetSearchMultiQuery 
+} = mediaApi

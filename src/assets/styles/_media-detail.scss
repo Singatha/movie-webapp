@@ -1,0 +1,38 @@
+.media-detail {
+    background-color: $color-bunting-default;
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    &__img {
+        height: 250px;
+        width: 220px;
+    }
+
+    &__title {
+        font-size: 1.25rem;
+    }
+
+    &__genre, &__duration, &__date, &__overview {
+        font-size: 0.8rem;
+    }
+
+    &__text {
+        color: $color-white;
+        font-family: $font-family;
+
+        &--bold {
+            font-weight: 900;
+        }
+    }
+    
+    &__similar-title {
+        color: $color-white;
+        font-family: $font-family;
+        padding: 20px 30px;
+    }
+}
