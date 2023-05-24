@@ -9,12 +9,12 @@ const SearchResults = () => {
     const { data, error, isLoading } = useGetSearchMultiQuery(searchString)
     
     if (error){
-        return <Error />
+        return <Error error={error} />
     } else if (isLoading){
         return <Loading />
     } else {
         return (
-            <MediaList data={data} isSlider={true} />
+            <MediaList data={data} isSlider={true} /> 
         )
     }
 }

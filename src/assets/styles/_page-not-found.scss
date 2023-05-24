@@ -34,9 +34,9 @@
         text-decoration: none;
         width: 100%;
 
-        &--hovered {
+        &--hovered:hover {
             background-color: $color-white;
-           color: $color-fountain-blue-900;
+            color: $color-fountain-blue-900;
         }
     }
 }

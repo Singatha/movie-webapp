@@ -7,7 +7,7 @@ const MovieList = () => {
     const { data, error, isLoading } = useGetMovieQuery();
 
     if (error){
-        return <Error/>
+        return <Error error={error} />
     } else if (isLoading){
         return <Loading/>
     } else {

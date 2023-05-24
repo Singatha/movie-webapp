@@ -7,7 +7,7 @@ const PopularMovies = () => {
     const { data, error, isLoading } = useGetPopularMoviesQuery()
 
     if (error){
-        return <Error/>
+        return <Error error={error} />
     } else if (isLoading){
         return <Loading/>
     } else {
