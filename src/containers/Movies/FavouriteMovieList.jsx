@@ -7,7 +7,7 @@ const FavouriteMovieList = () => {
     const { data, error, isLoading } = useGetFavouriteMoviesByAccountIDQuery();
 
     if (error){
-        return <Error/>
+        return <Error error={error} />
     } else if (isLoading){
         return <Loading/>
     } else {

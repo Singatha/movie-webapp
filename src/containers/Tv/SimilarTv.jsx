@@ -8,7 +8,7 @@ const SimilarTv = ({ tvID }) => {
     const { data, error, isLoading } = useGetSimilarTVByIDQuery(tvID)
 
     if (error){
-        return <Error/>
+        return <Error error={error} />
     } else if (isLoading){
         return <Loading/>
     } else {

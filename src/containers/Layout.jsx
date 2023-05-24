@@ -13,7 +13,7 @@ const Layout = () => {
     const { data, error, isLoading } = useGetTopRatedMoviesQuery()
 
     if (error){
-        return <Error />
+        return <Error error={error} />
     } else if (isLoading){
         return <Loading />
     } else {
@@ -31,7 +31,7 @@ const Layout = () => {
                                         alt="Movie Poster"
                                     />
                                     <Carousel.Caption className="home-layout__carousel-caption">
-                                        <h1 className="home-layout__title">{movie.original_title}</h1>
+                                        <h1 className="home-layout__movie-title">{movie.original_title}</h1>
                                         <p className="home-layout__sub-title">{formatGenresByID(movie.genre_ids)}</p>
                                         <h3 className="home-layout__text">{movie.overview}</h3>             
                                     </Carousel.Caption>
@@ -41,13 +41,13 @@ const Layout = () => {
                     }
                 </Carousel>
 
-                <h3 className="home-layout__header">Upcoming</h3>
+                <h3 className="home-layout__title">Upcoming</h3>
                 <UpcomingMovies />
 
-                <h3 className="home-layout__header">Popular</h3>
+                <h3 className="home-layout__title">Popular</h3>
                 <PopularMovies />
 
-                <h3 className="home-layout__header">TV Series</h3>
+                <h3 className="home-layout__title">TV Series</h3>
                 <Series />
 
                 <Footer />

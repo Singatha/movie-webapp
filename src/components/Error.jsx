@@ -1,18 +1,18 @@
 import Alert from 'react-bootstrap/Alert'
 import PropTypes from 'prop-types'
 
-const Error = ({ errorMsg }) => {
+const Error = ({ error }) => {
 
     return (
         <Alert className="error-alert" variant="danger" dismissible>
             <Alert.Heading className="error-alert__title">Oh snap! You got an error!</Alert.Heading>
-            <p className="error-alert__description">{errorMsg}</p>
+            <p className="error-alert__description">{error.data.status_message}</p>
         </Alert>
     )
 }
 
 Error.propTypes = {
-    errorMsg: PropTypes.string,
+    error: PropTypes.object,
 }
 
 export default Error

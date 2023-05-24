@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-const API_KEY = '49826d2b92b1877a7659eee47d7ca304';
+const API_KEY = `${import.meta.env.VITE_MOVIE_API_KEY}`;
 
 export const mediaApi = createApi({
   reducerPath: 'mediaApi',

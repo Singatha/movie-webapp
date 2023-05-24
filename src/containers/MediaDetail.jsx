@@ -14,7 +14,7 @@ const MediaDetail = () => {
   const { data, error, isLoading } = useGetMovieByIDQuery(mediaID)
   
   if (error){
-    return <Error/>
+    return <Error error={error} />
   } else if (isLoading){
     return <Loading/>
   } else {
